@@ -4,6 +4,7 @@ from funciones import disponibles
 from funciones import campeones
 from funciones import descripciones
 from funciones import stats
+from funciones import busqueda
 from funciones import roles
 
 with open("champion.json") as fichero:
@@ -17,7 +18,8 @@ while True:
 	2-Muestra el nombre de todos los campeones.
 	3-Pide por teclado un campeon y muestra su descripción.
 	4-Pide por teclado un campeon te muestra sus estadisticas y la url de su imagen.
-	5-Pide por teclado un rol(Tank, Figther,Mage,Assassin,Support,Marksman), y te muestra los campeones junto a su titulo que tengan ese rol.
+	5-Pide por teclado una cadena y muestra los campeones que comienzen por ella.
+	6-Pide por teclado un rol(Tank, Figther,Mage,Assassin,Support,Marksman), y te muestra los campeones junto a su titulo que tengan ese rol.
 	0-Para salir.
 	''')
 	opcion=int(input("Opcion: "))
@@ -38,6 +40,11 @@ while True:
 		for clave,valor in stats(campeon,doc).items():
 			print(clave,"->",valor)
 	elif opcion==5:
+		buscar=str(input("Dime la cadena por la que buscar: "))
+		print("Los campeones que empiezan por %s son: "%(buscar))
+		for elem in busqueda(buscar,doc):
+			print(elem)
+	elif opcion==6:
 		rol=str(input("Dime un rol: "))
 		for elem in roles(rol,doc):
 			print (elem["nombre"],elem["titulo"])
