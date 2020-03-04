@@ -1,5 +1,6 @@
 import json
 from funciones import parche
+from funciones import disponibles
 from funciones import campeones
 from funciones import descripciones
 from funciones import stats
@@ -23,7 +24,7 @@ while True:
 
 	if opcion==1:
 		print("La version del parche es:",parche(doc))
-		print("El numero de campeones disponibles es:",disponibles(doc)
+		print("El numero de campeones disponibles es:",disponibles(doc))
 	elif opcion==2:
 		print("Los Campeones disponibles son: ") 
 		for elem in campeones(doc):

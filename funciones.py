@@ -3,7 +3,8 @@ def parche(doc):
 	parche=doc["version"]
 	return parche
 def disponibles(doc):
-	num=count(doc["data"])
+	num=len(doc["data"])
+	return num
 def campeones(doc):
 	listacampeones=[]
 	for elem in doc["data"]:
