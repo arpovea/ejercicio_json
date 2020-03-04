@@ -22,6 +22,7 @@ def stats(campeon,doc):
 		if elem == campeon:
 			estadisticas=doc["data"][campeon]["stats"]
 	return estadisticas
+	
 def busqueda(buscar,doc):
 	listacampeones=[]
 	for elem in doc["data"]:
