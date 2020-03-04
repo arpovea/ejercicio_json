@@ -40,6 +40,3 @@ while True:
 		for elem in doc["data"].values():
 			if rol in elem["tags"]:
 				print (elem["name"],elem["title"])
-			
-				#if rol in elemento["tags"]:
-				#	print (doc["data"][elem]["name"],doc["data"][elem]["title"])
