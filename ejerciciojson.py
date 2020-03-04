@@ -40,3 +40,6 @@ while True:
 		for elem in doc["data"].values():
 			if rol in elem["tags"]:
 				print (elem["name"],elem["title"])
+	elif opcion==0:
+		print ("¡Hasta la proxima!")
+		break
