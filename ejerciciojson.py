@@ -1,5 +1,7 @@
 import json
-
+from funciones import parche
+from funciones import campeones
+from funciones import descripciones
 with open("champion.json") as fichero:
 	doc=json.load(fichero)
 print (type(doc))
@@ -17,16 +19,14 @@ while True:
 	opcion=int(input("Opcion: "))
 
 	if opcion==1:
-		print("La version del parche es:",doc["version"])
+		print("La version del parche es:",parche(doc))
 	elif opcion==2:
 		print("Los Campeones disponibles son: ") 
-		for elem in doc["data"]:
+		for elem in campeones(doc):
 			print (elem)
 	elif opcion==3:
 		campeon=str(input("Dime el nombre de un campeon:"))
-		for elem in doc["data"]:
-			if elem == campeon:
-				descripcion=doc["data"][campeon]["blurb"]
+		print("Descripción: ",descripciones(campeon,doc))
 	elif opcion==4:
 		campeon=str(input("Dime el nombre de un campeon:"))
 		print("Foto campeon:","http://ddragon.leagueoflegends.com/cdn/%s/img/champion/%s.png"%(doc["version"],campeon))
